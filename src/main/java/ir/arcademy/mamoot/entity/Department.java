@@ -1,12 +1,10 @@
 package ir.arcademy.mamoot.entity;
-
 import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-
 @Builder
 @Entity
 @Table(name = "departments")
