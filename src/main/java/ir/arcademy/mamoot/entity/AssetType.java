@@ -14,7 +14,7 @@ import javax.lang.model.type.NullType;
 @Table(name = "asset_types")
 public class AssetType extends BaseEntity {
 
-    @Column(nullable = false, NullType = true , length = 20)
+    @Column(nullable = false, length = 20)
     private String model;
     @Column(length = 100)
     private boolean hasSerialNumber;
