@@ -1,22 +1,26 @@
 package ir.arcademy.mamoot.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import javax.lang.model.type.NullType;
+
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
 @Entity
-@Table(name = "assettype")
+@Table(name = "asset_types")
 public class AssetType extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 20)
-    private String modle;
-    @Column(nullable = true, length = 100)
-    private String hasSerialNumber;
-    @Column(length = 30)
+    @Column(nullable = false, length = 20)
+    private String model;
+    @Column(length = 100)
+    private boolean hasSerialNumber;
+    @Column(length = 100)
     private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "inventory_group_id", nullable = false)
+    private InventoryGroup inventoryGroup;
 }
