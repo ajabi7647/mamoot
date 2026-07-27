@@ -6,4 +6,4 @@ public enum AssetStatus {
     MAINTENANCE,
     DISPOSED;
 }
-}
+

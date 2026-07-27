@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "assets")
 public class Asset extends BaseEntity {
-
     @Column(nullable = true, length = 50, unique = true)
     private String assetCode;
     @Column(nullable = false, length = 50)
@@ -22,7 +21,6 @@ public class Asset extends BaseEntity {
     @Column(nullable = false , length = 20,unique = true)
     private LocalDateTime entryDate;
     @Column(nullable = false , length = 20,unique = true)
-    private String status;
     @ManyToOne(fetch = FetchType.LAZY)
     private AssetType asset_type_id;
     @ManyToOne(fetch = FetchType.LAZY)

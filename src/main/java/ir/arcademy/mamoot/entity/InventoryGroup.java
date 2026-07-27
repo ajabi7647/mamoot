@@ -1,23 +1,20 @@
 package ir.arcademy.mamoot.entity;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
-@AllArgsConstructor
 @Entity
-@Table(name = "inventory_groups")
-public class InventoryGroup extends BaseEntity{
+    @Table(name = "inventory_groups")
+    @Getter
+    @Setter
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    @AllArgsConstructor
+    @Builder
+    public class InventoryGroup extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String name;
-    @Column(nullable = false, length = 50)
-    private  String description;
+        @Column(nullable = false, unique = true, length = 100)
+        private String name;
 
+        @Column(length = 300)
+        private String description;
 
 }

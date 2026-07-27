@@ -5,6 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "departments")
