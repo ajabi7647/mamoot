@@ -1,6 +1,6 @@
 package ir.arcademy.mamoot.entity;
 
-import ir.arcademy.mamoot.AssetStatus;
+import ir.arcademy.mamoot.enume.AssetStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

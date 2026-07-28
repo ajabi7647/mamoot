@@ -1,4 +1,4 @@
-package ir.arcademy.mamoot;
+package ir.arcademy.mamoot.enume;
 
 public enum AssetStatus {
     AVAILABLE,
