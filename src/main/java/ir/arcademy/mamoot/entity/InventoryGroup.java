@@ -10,11 +10,9 @@ import lombok.*;
     @AllArgsConstructor
     @Builder
     public class InventoryGroup extends BaseEntity {
-
-        @Column(nullable = false, unique = true, length = 100)
-        private String name;
-
-        @Column(length = 300)
-        private String description;
+    @Column(nullable = false, unique = true, length = 100)
+    private String name;
+    @Column(length = 300)
+    private String description;
 
 }
