@@ -16,15 +16,16 @@ import java.time.LocalDateTime;
 public class Asset extends BaseEntity {
     @Column(nullable = true, length = 50, unique = true)
     private String assetCode;
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String serialNumber;
-    @Column(nullable = false , length = 20,unique = true)
+    @Column(nullable = false , length = 20)
     private LocalDateTime entryDate;
     @Column(nullable = false , length = 20,unique = true)
     @ManyToOne(fetch = FetchType.LAZY)
-    private AssetType asset_type_id;
+    @JoinColumn(name = "asset_type_id")
+    private AssetType assetType;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id" ,nullable = false)
+    @JoinColumn(name = "employee_id")
     private Employee employee;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

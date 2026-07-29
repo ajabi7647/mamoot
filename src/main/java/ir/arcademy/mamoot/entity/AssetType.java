@@ -1,8 +1,6 @@
 package ir.arcademy.mamoot.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 @Getter
 @Setter
@@ -10,13 +8,17 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @Entity
-@Table(name = "assettype")
+@Table(name = "asset_type")
 public class AssetType extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 20)
-    private String modle;
     @Column(nullable = true, length = 100)
-    private String hasSerialNumber;
-    @Column(length = 30)
-    private String name;
+    private boolean hasSerialNumber;
+
+    @Column(nullable = false, length = 100, unique = true)
+    private String title;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "inventory_group_id", nullable = false)
+    private InventoryGroup inventoryGroup;
+}
 }
