@@ -1,8 +1,6 @@
 package ir.arcademy.mamoot.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -15,12 +13,16 @@ import lombok.*;
 public class TransferVoucherItem extends BaseEntity{
     @Column(nullable = false)
     private String quantity;
+    @ManyToOne
+    @JoinColumn(name = "voucher_id", nullable = false)
+    private TransferVoucher voucher;
+    @ManyToOne
+    @JoinColumn(name = "consumable_item_id")
+    private ConsumableItem consumableItem;
+    @ManyToOne
+    @JoinColumn(name = "asset_type_id")
+    private AssetType assetType;
 
-    voucher_id
-    @Column(nullable = false)
-    asset_type_id
-    @Column(nullable = false)
-    consumable_item_id
 
 
 
