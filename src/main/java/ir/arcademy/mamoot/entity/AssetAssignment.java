@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "asset_assignments")
-public class Assetassignment extends BaseEntity {
+public class AssetAssignment extends BaseEntity {
     @Column(nullable = false)
     private LocalDate deliveryDate;
 

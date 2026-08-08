@@ -12,12 +12,16 @@ import lombok.*;
 @Table(name = "consumable_items")
 
 public class ConsumableItem extends BaseEntity{
-    @Column(nullable = false, length = 50)
+
+    @Column(nullable = false, unique = true, length = 50)
     private String name;
+
     @Column(nullable = true, length = 300)
     private String description;
+
     @Column(nullable = false, length = 10)
     private  String unit;
+
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "inventory_group_id", nullable = false)
     private InventoryGroup inventoryGroup;

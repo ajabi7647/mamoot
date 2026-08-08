@@ -9,21 +9,21 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @Entity
-@Table(name = "transfer_vouchers")
+@Table(name = "transfer_vouchers_items")
 public class TransferVoucherItem extends BaseEntity{
+
     @Column(nullable = false)
-    private String quantity;
-    @ManyToOne
+    private Integer quantity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "voucher_id", nullable = false)
     private TransferVoucher voucher;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "consumable_item_id")
     private ConsumableItem consumableItem;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "asset_type_id")
     private AssetType assetType;
-
-
-
-
 }

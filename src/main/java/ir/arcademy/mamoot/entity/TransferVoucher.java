@@ -14,7 +14,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "transfer_vouchers")
 public class TransferVoucher extends BaseEntity {
-    @Column(nullable = true, unique = true, length = 50)
+
+    @Column(nullable = false, unique = true, updatable = false, length = 50)
     private String voucherNumber;
 
     @Column(nullable = false)
@@ -29,10 +30,11 @@ public class TransferVoucher extends BaseEntity {
     private VoucherType voucherType;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private VoucherStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "inventory_group_id")
+    @JoinColumn(name = "inventory_group_id", nullable = false)
     private InventoryGroup inventoryGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)

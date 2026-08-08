@@ -14,6 +14,9 @@ public class AssetType extends BaseEntity {
     @Column(nullable = true, length = 100)
     private boolean hasSerialNumber;
 
+    @Column(nullable = true, length = 100)
+    private String model;
+
     @Column(nullable = false, length = 100, unique = true)
     private String title;
 
@@ -21,4 +24,4 @@ public class AssetType extends BaseEntity {
     @JoinColumn(name = "inventory_group_id", nullable = false)
     private InventoryGroup inventoryGroup;
 }
-}
+
