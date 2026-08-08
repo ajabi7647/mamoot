@@ -14,7 +14,6 @@ import java.time.LocalDate;
 public class AssetAssignment extends BaseEntity {
     @Column(nullable = false)
     private LocalDate deliveryDate;
-
     private LocalDate returnDate;
     @Column(length = 300)
     private String description;
