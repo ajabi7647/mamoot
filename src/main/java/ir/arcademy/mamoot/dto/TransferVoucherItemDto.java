@@ -11,13 +11,7 @@ import java.util.UUID;
 public class TransferVoucherItemDto {
 
     private Integer quantity;
-
-
     private UUID voucherId;
-
-
     private UUID consumableItemId;
-
-
     private UUID assetTypeId;
 }
