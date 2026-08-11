@@ -17,7 +17,7 @@ public class TransferVoucherItem extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "voucher_id", nullable = false)
-    private TransferVoucher voucher;
+    private TransferVoucherEntity voucher;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "consumable_item_id")

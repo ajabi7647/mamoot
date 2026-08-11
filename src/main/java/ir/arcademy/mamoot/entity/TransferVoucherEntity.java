@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "transfer_vouchers")
-public class TransferVoucher extends BaseEntity {
+public class TransferVoucherEntity extends BaseEntity {
 
     @Column(nullable = false, unique = true, updatable = false, length = 50)
     private String voucherNumber;
