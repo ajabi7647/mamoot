@@ -9,7 +9,7 @@ import lombok.*;
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     @AllArgsConstructor
     @Builder
-    public class InventoryGroup extends BaseEntity {
+    public class InventoryGroupEntity extends BaseEntity {
     @Column(nullable = false, unique = true, length = 100)
     private String name;
     @Column(length = 300)

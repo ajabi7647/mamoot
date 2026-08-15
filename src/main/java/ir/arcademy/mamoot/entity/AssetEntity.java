@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "assets")
-public class Asset extends BaseEntity<Long> {
+public class AssetEntity extends BaseEntity {
 
     @Column(nullable = true, length = 50, unique = true)
     private String assetCode;
@@ -28,7 +26,7 @@ public class Asset extends BaseEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "asset_type_id", nullable = false)
-    private AssetType assetType;
+    private AssetTypeEntity assetType;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

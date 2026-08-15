@@ -23,7 +23,7 @@ public class TransferVoucherEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id", nullable = false)
-    private Department department;
+    private DepartmentEntity department;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -35,10 +35,10 @@ public class TransferVoucherEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inventory_group_id", nullable = false)
-    private InventoryGroup inventoryGroup;
+    private InventoryGroupEntity inventoryGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "distribution_officer_id")
-    private Employee distributionOfficer;
+    private EmployeeEntity distributionOfficer;
 
 }

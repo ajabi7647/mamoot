@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "departments")
-public class Department extends BaseEntity {
+public class DepartmentEntity extends BaseEntity {
 
     @Column(nullable = false, unique = true, length = 20)
     private String code;

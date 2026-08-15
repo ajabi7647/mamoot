@@ -1,16 +1,14 @@
 package ir.arcademy.mamoot.repository;
 
-import ir.arcademy.mamoot.entity.Department;
-import org.aspectj.apache.bcel.classfile.Code;
-import org.springframework.data.domain.Example;
+import ir.arcademy.mamoot.entity.DepartmentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.naming.Name;
 import java.util.Optional;
+import java.util.UUID;
 
-public interface DepartmentRepository extends JpaRepository<Department, Long> {
+public interface DepartmentRepository extends JpaRepository<DepartmentEntity, UUID> {
 
-    Optional<Department> findByName(String name); //search by name
+    Optional<DepartmentEntity> findByName(String name); //search by name
 
     boolean existsByName(String Name);  // Checking for not duplicates department Name
     boolean existsByCode(String Code);// Checking for not duplicates department code

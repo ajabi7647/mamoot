@@ -1,6 +1,5 @@
 package ir.arcademy.mamoot.dto;
 
-import ir.arcademy.mamoot.entity.AssetType;
 import ir.arcademy.mamoot.enume.AssetStatus;
 import lombok.Getter;
 import lombok.Setter;

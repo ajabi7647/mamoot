@@ -11,7 +11,7 @@ import lombok.*;
 @Entity
 @Table(name = "consumable_items")
 
-public class ConsumableItem extends BaseEntity{
+public class ConsumableItemEntity extends BaseEntity{
 
     @Column(nullable = false, unique = true, length = 50)
     private String name;
@@ -24,5 +24,5 @@ public class ConsumableItem extends BaseEntity{
 
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "inventory_group_id", nullable = false)
-    private InventoryGroup inventoryGroup;
+    private InventoryGroupEntity inventoryGroup;
 }

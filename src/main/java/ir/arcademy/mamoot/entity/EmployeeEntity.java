@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "employees")
-public class Employee extends BaseEntity {
+public class EmployeeEntity extends BaseEntity {
 
     @Column(nullable = false, length = 50)
     private String firstName;
@@ -19,5 +19,5 @@ public class Employee extends BaseEntity {
     private String personnelNumber;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id" ,nullable = false)
-    private Department department;
+    private DepartmentEntity department;
 }

@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "transfer_vouchers_items")
-public class TransferVoucherItem extends BaseEntity{
+public class TransferVoucherItemEntity extends BaseEntity{
 
     @Column(nullable = false)
     private Integer quantity;
@@ -21,9 +21,9 @@ public class TransferVoucherItem extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "consumable_item_id")
-    private ConsumableItem consumableItem;
+    private ConsumableItemEntity consumableItem;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "asset_type_id")
-    private AssetType assetType;
+    private AssetTypeEntity assetType;
 }

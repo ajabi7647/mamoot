@@ -1,6 +1,4 @@
 package ir.arcademy.mamoot.dto;
-import ir.arcademy.mamoot.entity.Asset;
-import ir.arcademy.mamoot.entity.Employee;
 import lombok.Getter;
 import lombok.Setter;
 

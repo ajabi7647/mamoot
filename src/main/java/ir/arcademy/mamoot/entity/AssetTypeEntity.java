@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "asset_type")
-public class AssetType extends BaseEntity {
+public class AssetTypeEntity extends BaseEntity {
 
     @Column(nullable = true, length = 100)
     private boolean hasSerialNumber;
@@ -22,6 +22,6 @@ public class AssetType extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inventory_group_id", nullable = false)
-    private InventoryGroup inventoryGroup;
+    private InventoryGroupEntity inventoryGroup;
 }
 

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "asset_assignments")
-public class AssetAssignment extends BaseEntity {
+public class AssetAssignmentEntity extends BaseEntity {
     @Column(nullable = false)
     private LocalDate deliveryDate;
     private LocalDate returnDate;
@@ -19,9 +19,9 @@ public class AssetAssignment extends BaseEntity {
     private String description;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id" ,nullable = false)
-    private Employee employee;
+    private EmployeeEntity employee;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "asset_id" ,nullable = false)
-    private Asset asset;
+    private AssetEntity asset;
 }
 
