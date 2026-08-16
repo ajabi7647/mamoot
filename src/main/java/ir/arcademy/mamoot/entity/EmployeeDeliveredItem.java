@@ -25,7 +25,7 @@ public class EmployeeDeliveredItem extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "receiver_id", nullable = false)
-    private EmployeeEntity reciver;
+    private EmployeeEntity receiver;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "deliverer_id", nullable = false)
