@@ -2,9 +2,10 @@ package ir.arcademy.mamoot.mapper;
 
 import ir.arcademy.mamoot.dto.EmployeeDeliveredItemDto;
 import ir.arcademy.mamoot.entity.EmployeeDeliveredItem;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
-
+@Component
 public class EmployeeDeliveredItemMapper {
 
     public EmployeeDeliveredItemDto toDto(EmployeeDeliveredItem entity) {

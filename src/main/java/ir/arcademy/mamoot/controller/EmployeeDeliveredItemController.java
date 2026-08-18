@@ -1,17 +1,32 @@
 package ir.arcademy.mamoot.controller;
 
-import org.springframework.context.annotation.Configuration;
+import ir.arcademy.mamoot.dto.EmployeeDeliveredItemDto;
+import ir.arcademy.mamoot.entity.EmployeeDeliveredItem;
+import ir.arcademy.mamoot.service.EmployeeDeliveredItemService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import ir.arcademy.mamoot.dto.EmployeeDeliveredItemDto;
+import java.util.List;
+import java.util.UUID;
 
-@Configuration
-@RequestMapping("api/v1/delivered")
+@RestController
+@RequestMapping("/api/v1/delivered")
 public class EmployeeDeliveredItemController {
 
-    //GET
-    @GetMapping
-    public ResponseEntity<<>>
+    private final EmployeeDeliveredItemService employeeDeliveredItemService;
 
+    public EmployeeDeliveredItemController(
+            EmployeeDeliveredItemService employeeDeliveredItemService) {
+        this.employeeDeliveredItemService = employeeDeliveredItemService;
+    }
 
+    @GetMapping("/receiver/{receiverId}")
+    public ResponseEntity<List<EmployeeDeliveredItemDto>> getItemsByReceiver(
+            @PathVariable UUID receiverId) {
+
+        List<EmployeeDeliveredItemDto> items =
+                employeeDeliveredItemService.getEmployeeDeliveredItems(receiverId);
+
+        return ResponseEntity.ok(items);
+    }
 }
